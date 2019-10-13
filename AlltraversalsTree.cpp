@@ -3,20 +3,17 @@ using namespace std;
 struct TreeNode 
 {
     int val;
-    TreeNode*left;
-    TreeNode*right;
+    TreeNode*left, *right;
     TreeNode(int data)
     {
       val=data;
       left=right=NULL;
     }
-   
-
 };
 void Inorder(TreeNode*root)
 {
-    if(!root)
-    return ;
+    if(root == NULL)
+        return ;    // indent code properly
     Inorder(root->left);
     cout<<root->val;
     Inorder(root->right);
@@ -24,8 +21,8 @@ void Inorder(TreeNode*root)
 }
 void Preorder(TreeNode*root)
 {
-    if(!root)
-    return ;
+    if(root == NULL)
+        return ;    // indent code properly
     cout<<root->val;
     Inorder(root->left);
     Inorder(root->right);
@@ -43,7 +40,7 @@ void Postorder(TreeNode*root)
 void LevelOrder(TreeNode*root)
 {   
     if(!root)
-    return;
+        return; // indent code properly
     queue<TreeNode*>q;
     q.push(root);
     while(!q.empty())
@@ -57,41 +54,12 @@ void LevelOrder(TreeNode*root)
          if(t->right)
         q.push(t->right);
     }
-    // if (root == NULL)  return; 
-  
-    // // Create an empty queue for level order tarversal 
-    // queue<TreeNode *> q; 
-  
-    // // Enqueue Root and initialize height 
-    // q.push(root); 
-  
-    // while (q.empty() == false) 
-    // { 
-    //     // Print front of queue and remove it from queue 
-    //     TreeNode *node = q.front(); 
-    //     cout << node->val << " "; 
-    //     q.pop(); 
-  
-    //     /* Enqueue left child */
-    //     if (node->left != NULL) 
-    //         q.push(node->left); 
-  
-    //     /*Enqueue right child */
-    //     if (node->right != NULL) 
-    //         q.push(node->right); 
-    // } 
 }
 
 
 int main()
 {   
-    
-    // struct TreeNode *root = new TreeNode(1); 
-    // root->left             = new TreeNode(2); 
-    // root->right         = new TreeNode(3); 
-    // root->left->left     = new TreeNode(4); 
-    // root->left->right = new TreeNode(5);  
-  TreeNode *root =new TreeNode(1); 
+    TreeNode *root =new TreeNode(1);    // indent code properly
     root->left = new TreeNode(2); 
     root->right =new  TreeNode(3); 
     root->left->left =new TreeNode(4); 
